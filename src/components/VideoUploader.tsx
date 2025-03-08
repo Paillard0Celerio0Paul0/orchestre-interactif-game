@@ -1,7 +1,17 @@
 'use client';
 
+import React from 'react';
 import { CldUploadWidget } from 'next-cloudinary';
 import { useState } from 'react';
+
+// Ajout des types pour Node
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET: string;
+    }
+  }
+}
 
 interface VideoUploaderProps {
   onUploadSuccess?: (result: any) => void;
